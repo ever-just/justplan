@@ -19,9 +19,19 @@ import {
   UserCheck, 
   TrendingUp,
   Plus,
-  Edit
+  Edit,
+  Settings,
+  LogOut,
+  MoreVertical
 } from 'lucide-react'
 import Link from 'next/link'
+import { 
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu'
 
 interface BMCSection {
   id: string
@@ -187,16 +197,49 @@ export default function CanvasPage() {
   return (
     <div className="min-h-screen bg-black text-white p-4 md:p-6 lg:p-8">
       {/* Header */}
-      <div className="mb-8 flex items-center justify-between">
-        <div>
-          <h1 className="text-3xl md:text-4xl font-bold">Business Model Canvas</h1>
-          <p className="text-zinc-400 mt-2">Interactive business model design tool</p>
+      <div className="mb-8">
+        {/* Top Bar with Settings */}
+        <div className="flex items-center justify-between mb-6">
+          <Link href="/">
+            <Button variant="outline" className="border-zinc-700 text-white hover:bg-zinc-800">
+              Back to Home
+            </Button>
+          </Link>
+          
+          <div className="flex items-center gap-4">
+            <span className="text-xs text-zinc-500">v1.0.0</span>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" size="sm" className="text-white hover:bg-zinc-800">
+                  <MoreVertical className="h-4 w-4" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="bg-zinc-900 border-zinc-700">
+                <DropdownMenuItem className="text-white hover:bg-zinc-800">
+                  <Settings className="mr-2 h-4 w-4" />
+                  Settings
+                </DropdownMenuItem>
+                <DropdownMenuSeparator className="bg-zinc-700" />
+                <DropdownMenuItem className="text-white hover:bg-zinc-800">
+                  {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
+                  <a href="/api/auth/logout" className="flex items-center w-full">
+                    <LogOut className="mr-2 h-4 w-4" />
+                    Sign Out
+                  </a>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
         </div>
-        <Link href="/">
-          <Button variant="outline" className="border-zinc-700 text-white hover:bg-zinc-800">
-            Back to Home
-          </Button>
-        </Link>
+
+        {/* Centered Title */}
+        <div className="text-center">
+          <h1 className="text-3xl md:text-4xl font-bold mb-2">Business Model Canvas</h1>
+          <p className="text-zinc-300 font-medium">Interactive business model design tool</p>
+          <div className="mt-3">
+            <span className="text-blue-400 font-semibold text-sm">Powered by EVERJUST</span>
+          </div>
+        </div>
       </div>
 
       {/* BMC Grid */}
@@ -212,13 +255,13 @@ export default function CanvasPage() {
             onClick={() => handleEditSection(section)}
           >
             <CardHeader className="pb-3">
-              <CardTitle className="flex items-center gap-3 text-sm md:text-base">
+              <CardTitle className="flex items-center gap-3 text-sm md:text-base font-bold text-white">
                 <div className={`p-2 rounded-lg bg-zinc-800 text-white group-hover:bg-zinc-700 transition-colors`}>
                   {section.icon}
                 </div>
                 {section.title}
               </CardTitle>
-              <CardDescription className="text-xs md:text-sm text-zinc-400">
+              <CardDescription className="text-xs md:text-sm text-zinc-200 font-medium">
                 {section.description}
               </CardDescription>
             </CardHeader>
@@ -226,22 +269,22 @@ export default function CanvasPage() {
               <div className="space-y-2">
                 {section.items.slice(0, 3).map((item, itemIndex) => (
                   <div key={itemIndex} className="flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 bg-zinc-500 rounded-full flex-shrink-0" />
-                    <span className="text-xs md:text-sm text-zinc-300 truncate">{item}</span>
+                    <div className="w-1.5 h-1.5 bg-blue-400 rounded-full flex-shrink-0" />
+                    <span className="text-xs md:text-sm text-white font-medium truncate">{item}</span>
                   </div>
                 ))}
                 {section.items.length > 3 && (
                   <div className="flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 bg-zinc-500 rounded-full flex-shrink-0" />
-                    <span className="text-xs text-zinc-500">+{section.items.length - 3} more</span>
+                    <div className="w-1.5 h-1.5 bg-blue-400 rounded-full flex-shrink-0" />
+                    <span className="text-xs text-zinc-300 font-medium">+{section.items.length - 3} more</span>
                   </div>
                 )}
               </div>
               <div className="mt-4 flex items-center justify-between">
-                <Badge variant="secondary" className="text-xs bg-zinc-800 text-zinc-300">
-                  {section.items.length} items
+                <Badge variant="secondary" className="text-xs bg-zinc-800 text-white border border-zinc-700">
+                  <span className="font-semibold">{section.items.length} items</span>
                 </Badge>
-                <Edit className="h-3 w-3 text-zinc-500 group-hover:text-zinc-300 transition-colors" />
+                <Edit className="h-3 w-3 text-zinc-300 group-hover:text-white transition-colors" />
               </div>
             </CardContent>
           </Card>
@@ -252,17 +295,17 @@ export default function CanvasPage() {
       <Dialog open={selectedSection !== null} onOpenChange={() => setSelectedSection(null)}>
         <DialogContent className="bg-zinc-900 border-zinc-700 text-white max-w-2xl max-h-[80vh] overflow-y-auto">
           <DialogHeader>
-            <DialogTitle className="flex items-center gap-3">
+            <DialogTitle className="flex items-center gap-3 text-white font-bold text-lg">
               {selectedSection?.icon}
               {selectedSection?.title}
             </DialogTitle>
-            <DialogDescription className="text-zinc-400">
+            <DialogDescription className="text-zinc-200 font-medium">
               {selectedSection?.description}
             </DialogDescription>
           </DialogHeader>
           
           <div className="space-y-4 mt-6">
-            <Label className="text-sm font-medium">Items</Label>
+            <Label className="text-sm font-bold text-white">Items</Label>
             <div className="space-y-3">
               {editingItems.map((item, index) => (
                 <div key={index} className="flex gap-2">

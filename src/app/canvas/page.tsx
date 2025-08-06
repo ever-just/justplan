@@ -237,7 +237,7 @@ export default function CanvasPage() {
           <h1 className="text-3xl md:text-4xl font-bold mb-2">Business Model Canvas</h1>
           <p className="text-zinc-300 font-medium">Interactive business model design tool</p>
           <div className="mt-3">
-            <span className="text-blue-400 font-semibold text-sm">Powered by EVERJUST</span>
+            <span className="text-blue-400 font-semibold text-sm">JUSTPLAN</span>
           </div>
         </div>
       </div>

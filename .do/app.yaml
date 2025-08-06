@@ -1,0 +1,38 @@
+name: justplan
+services:
+  - name: web
+    github:
+      repo: ever-just/justplan
+      branch: main
+      deploy_on_push: true
+    build_command: npm install && npm run build
+    run_command: npm start
+    environment_slug: node-js
+    instance_count: 1
+    instance_size_slug: professional-xs
+    http_port: 3000
+    envs:
+      - key: NODE_ENV
+        value: production
+        type: GENERAL
+      - key: AUTH0_SECRET
+        scope: RUN_TIME
+        value: ${AUTH0_SECRET}
+      - key: AUTH0_BASE_URL
+        scope: RUN_TIME
+        value: ${AUTH0_BASE_URL}
+      - key: AUTH0_ISSUER_BASE_URL
+        scope: RUN_TIME
+        value: ${AUTH0_ISSUER_BASE_URL}
+      - key: AUTH0_CLIENT_ID
+        scope: RUN_TIME
+        value: ${AUTH0_CLIENT_ID}
+      - key: AUTH0_CLIENT_SECRET
+        scope: RUN_TIME
+        value: ${AUTH0_CLIENT_SECRET}
+      - key: DATABASE_URL
+        scope: RUN_TIME
+        value: ${db.DATABASE_URL}
+
+databases:
+  - cluster_name: justplan-db

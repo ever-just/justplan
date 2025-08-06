@@ -201,7 +201,7 @@ export default function CanvasPage() {
         {/* Top Bar with Settings */}
         <div className="flex items-center justify-between mb-6">
           <Link href="/">
-            <Button variant="outline" className="border-zinc-700 text-white hover:bg-zinc-800">
+            <Button variant="outline" className="border-zinc-600 bg-zinc-800 text-white hover:bg-zinc-700 hover:text-white">
               Back to Home
             </Button>
           </Link>
@@ -214,13 +214,13 @@ export default function CanvasPage() {
                   <MoreVertical className="h-4 w-4" />
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="bg-zinc-900 border-zinc-700">
-                <DropdownMenuItem className="text-white hover:bg-zinc-800">
+              <DropdownMenuContent align="end" className="bg-zinc-900 border-zinc-700 text-white">
+                <DropdownMenuItem className="text-white hover:bg-zinc-800 focus:bg-zinc-800 focus:text-white">
                   <Settings className="mr-2 h-4 w-4" />
                   Settings
                 </DropdownMenuItem>
                 <DropdownMenuSeparator className="bg-zinc-700" />
-                <DropdownMenuItem className="text-white hover:bg-zinc-800">
+                <DropdownMenuItem className="text-white hover:bg-zinc-800 focus:bg-zinc-800 focus:text-white">
                   {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
                   <a href="/api/auth/logout" className="flex items-center w-full">
                     <LogOut className="mr-2 h-4 w-4" />
@@ -247,7 +247,7 @@ export default function CanvasPage() {
         {bmcSections.map((section, index) => (
           <Card 
             key={section.id} 
-            className={`bg-zinc-900 border-2 ${section.color} hover:bg-zinc-800 transition-all duration-200 cursor-pointer group ${
+            className={`bg-zinc-900 border-2 ${section.color} hover:bg-zinc-700 transition-all duration-200 cursor-pointer group ${
               index === 3 ? 'lg:col-span-1 xl:col-span-1' : ''
             } ${
               index >= 7 ? 'md:col-span-1' : ''
@@ -330,7 +330,7 @@ export default function CanvasPage() {
             <Button
               onClick={addNewItem}
               variant="outline"
-              className="w-full border-zinc-700 text-white hover:bg-zinc-800"
+              className="w-full border-zinc-600 bg-zinc-800 text-white hover:bg-zinc-700 hover:text-white"
             >
               <Plus className="h-4 w-4 mr-2" />
               Add New Item
@@ -345,7 +345,7 @@ export default function CanvasPage() {
               <Button 
                 onClick={() => setSelectedSection(null)} 
                 variant="outline"
-                className="border-zinc-700 text-white hover:bg-zinc-800"
+                className="border-zinc-600 bg-zinc-800 text-white hover:bg-zinc-700 hover:text-white"
               >
                 Cancel
               </Button>

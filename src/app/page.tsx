@@ -22,7 +22,7 @@ export default async function HomePage() {
                 Open Canvas
               </Link>
               <a 
-                href="/auth/logout" 
+                href="/api/auth/logout" 
                 className="inline-block bg-zinc-800 hover:bg-zinc-700 text-white px-6 py-3 rounded-lg transition-colors"
               >
                 Logout
@@ -34,13 +34,13 @@ export default async function HomePage() {
             <p className="text-zinc-400">Please sign in to access your Business Model Canvas</p>
             <div className="space-x-4">
               <a 
-                href="/auth/login" 
+                href="/api/auth/login" 
                 className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-colors"
               >
                 Login
               </a>
               <a 
-                href="/auth/signup" 
+                href="/api/auth/login?screen_hint=signup" 
                 className="inline-block bg-zinc-800 hover:bg-zinc-700 text-white px-6 py-3 rounded-lg transition-colors"
               >
                 Sign Up

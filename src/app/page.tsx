@@ -123,38 +123,50 @@ export default async function HomePage() {
               </p>
             </div>
 
-          {user ? (
-            <div className="space-y-6">
-              <p className="text-xl text-zinc-200">Welcome back, {user.name}!</p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/canvas">
-                  <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3">
-                    Open Your Canvas
-                  </Button>
-                </Link>
-                <a href="/api/auth/logout">
-                  <Button variant="outline" size="lg" className="border-zinc-600 bg-zinc-800 text-white hover:bg-zinc-700 px-8 py-3">
-                    Logout
-                  </Button>
-                </a>
+            {user ? (
+              <div className="space-y-8">
+                <div className="bg-zinc-900/50 backdrop-blur-sm border border-zinc-800 rounded-2xl p-6 max-w-md mx-auto">
+                  <p className="text-xl text-zinc-200 mb-4">Welcome back, {user.name}!</p>
+                  <div className="flex flex-col gap-3">
+                    <Link href="/canvas">
+                      <Button size="lg" className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-blue-500/25 transition-all duration-200">
+                        Open Your Canvas
+                      </Button>
+                    </Link>
+                    <a href="/api/auth/logout">
+                      <Button variant="outline" size="lg" className="w-full border-zinc-600 bg-zinc-800/50 text-white hover:bg-zinc-700 px-8 py-4 rounded-xl font-semibold transition-all duration-200">
+                        Logout
+                      </Button>
+                    </a>
+                  </div>
+                </div>
               </div>
-            </div>
-          ) : (
-            <div className="space-y-6">
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="/api/auth/login">
-                  <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3">
-                    Get Started
-                  </Button>
-                </a>
-                <a href="/api/auth/login?screen_hint=signup">
-                  <Button variant="outline" size="lg" className="border-zinc-600 bg-zinc-800 text-white hover:bg-zinc-700 px-8 py-3">
-                    Sign Up Free
-                  </Button>
-                </a>
+            ) : (
+              <div className="space-y-8">
+                <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
+                  <a href="/api/auth/login" className="flex-1">
+                    <Button size="lg" className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-blue-500/25 transition-all duration-200 transform hover:scale-105">
+                      Get Started
+                    </Button>
+                  </a>
+                  <a href="/api/auth/login?screen_hint=signup" className="flex-1">
+                    <Button variant="outline" size="lg" className="w-full border-zinc-600 bg-zinc-800/50 backdrop-blur-sm text-white hover:bg-zinc-700 px-8 py-4 rounded-xl font-semibold transition-all duration-200 transform hover:scale-105">
+                      Sign Up Free
+                    </Button>
+                  </a>
+                </div>
+                <div className="flex items-center justify-center gap-8 text-zinc-400 text-sm">
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-green-500" />
+                    <span>Free to start</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-green-500" />
+                    <span>No credit card required</span>
+                  </div>
+                </div>
               </div>
-            </div>
-          )}
+            )}
         </div>
       </div>
 
@@ -311,4 +323,5 @@ export default async function HomePage() {
     </div>
   )
 }
+
 

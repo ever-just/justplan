@@ -395,11 +395,13 @@ export default async function HomePage() {
             {!user && (
               <div className="space-y-8">
                 <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-lg mx-auto">
+                  {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
                   <a href="/api/auth/login?screen_hint=signup" className="flex-1">
                     <Button size="lg" className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-blue-500/25 transition-all duration-200 transform hover:scale-105">
                       Start Building Your Canvas
                     </Button>
                   </a>
+                  {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
                   <a href="/api/auth/login" className="flex-1">
                     <Button variant="outline" size="lg" className="w-full border-zinc-600 bg-zinc-800/50 backdrop-blur-sm text-white hover:bg-zinc-700 px-8 py-4 rounded-xl font-semibold transition-all duration-200 transform hover:scale-105">
                       Sign In
@@ -499,6 +501,7 @@ export default async function HomePage() {
     </div>
   )
 }
+
 
 
 

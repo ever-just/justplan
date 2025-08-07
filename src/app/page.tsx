@@ -249,34 +249,56 @@ export default async function HomePage() {
         </div>
       </div>
 
-      <Separator className="bg-zinc-800" />
+      <Separator className="bg-gradient-to-r from-transparent via-zinc-700 to-transparent" />
 
       {/* 9 BMC Sections */}
-      <div className="container mx-auto px-4 py-16">
-        <div className="max-w-6xl mx-auto space-y-12">
-          <div className="text-center space-y-4">
-            <h2 className="text-3xl md:text-4xl font-bold">The 9 Building Blocks</h2>
-            <p className="text-lg text-zinc-300">
-              Each section of the Business Model Canvas focuses on a key aspect of your business
-            </p>
-          </div>
+      <div className="relative py-20 lg:py-32">
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-zinc-950 to-black"></div>
+        <div className="relative container mx-auto px-4">
+          <div className="max-w-7xl mx-auto space-y-16">
+            <div className="text-center space-y-6">
+              <Badge variant="outline" className="border-green-500/50 bg-green-500/10 text-green-300 px-4 py-2 text-sm font-medium">
+                Business Model Framework
+              </Badge>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-white via-zinc-200 to-zinc-400 bg-clip-text text-transparent">
+                The 9 Building Blocks
+              </h2>
+              <p className="text-lg md:text-xl text-zinc-300 max-w-3xl mx-auto leading-relaxed">
+                Each section of the Business Model Canvas focuses on a key aspect of your business, 
+                providing a comprehensive framework for strategic planning
+              </p>
+            </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {bmcSections.map((section, index) => (
-              <Card key={index} className={`bg-zinc-900 border-2 ${section.color} hover:bg-zinc-800 transition-colors`}>
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-3 text-white">
-                    {section.icon}
-                    {section.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-zinc-300">
-                    {section.description}
-                  </CardDescription>
-                </CardContent>
-              </Card>
-            ))}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+              {bmcSections.map((section, index) => (
+                <Card 
+                  key={index} 
+                  className={`group bg-gradient-to-br from-zinc-900 to-zinc-800 border-2 ${section.color} hover:shadow-2xl hover:shadow-${section.color.split('-')[1]}-500/20 transition-all duration-300 transform hover:scale-105 hover:-translate-y-2`}
+                >
+                  <CardHeader className="pb-4">
+                    <CardTitle className="flex items-center gap-3 text-white group-hover:text-zinc-100 transition-colors">
+                      <div className={`p-2 rounded-lg bg-${section.color.split('-')[1]}-500/20 group-hover:bg-${section.color.split('-')[1]}-500/30 transition-colors`}>
+                        {section.icon}
+                      </div>
+                      <span className="text-lg font-semibold">{section.title}</span>
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="pt-0">
+                    <CardDescription className="text-zinc-300 group-hover:text-zinc-200 transition-colors leading-relaxed">
+                      {section.description}
+                    </CardDescription>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+
+            {/* Interactive preview hint */}
+            <div className="text-center">
+              <div className="inline-flex items-center gap-2 bg-zinc-900/50 backdrop-blur-sm border border-zinc-800 rounded-full px-6 py-3">
+                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                <span className="text-zinc-300 text-sm font-medium">Interactive canvas available after login</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -373,6 +395,7 @@ export default async function HomePage() {
     </div>
   )
 }
+
 
 
 

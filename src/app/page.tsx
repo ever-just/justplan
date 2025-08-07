@@ -207,7 +207,7 @@ export default async function HomePage() {
                       helping you understand how your company creates, delivers, and captures value.
                     </p>
                     <p className="text-zinc-300 leading-relaxed">
-                      Whether you're launching a startup, pivoting an existing business, or exploring new opportunities, 
+                      Whether you&apos;re launching a startup, pivoting an existing business, or exploring new opportunities, 
                       the Business Model Canvas provides clarity and structure to your strategic thinking.
                     </p>
                   </div>
@@ -499,6 +499,7 @@ export default async function HomePage() {
     </div>
   )
 }
+
 
 
 

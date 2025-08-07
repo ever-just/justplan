@@ -303,51 +303,67 @@ export default async function HomePage() {
         </div>
       </div>
 
-      <Separator className="bg-zinc-800" />
+      <Separator className="bg-gradient-to-r from-transparent via-zinc-700 to-transparent" />
 
       {/* Benefits Section */}
-      <div className="container mx-auto px-4 py-16">
-        <div className="max-w-4xl mx-auto space-y-12">
-          <div className="text-center space-y-4">
-            <h2 className="text-3xl md:text-4xl font-bold">Why Use JUSTPLAN?</h2>
-            <p className="text-lg text-zinc-300">
-              Our platform makes business model planning simple, collaborative, and effective
-            </p>
-          </div>
+      <div className="relative py-20 lg:py-32">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/10 via-black to-purple-900/10"></div>
+        <div className="relative container mx-auto px-4">
+          <div className="max-w-6xl mx-auto space-y-16">
+            <div className="text-center space-y-6">
+              <Badge variant="outline" className="border-orange-500/50 bg-orange-500/10 text-orange-300 px-4 py-2 text-sm font-medium">
+                Platform Benefits
+              </Badge>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-white via-zinc-200 to-zinc-400 bg-clip-text text-transparent">
+                Why Use JUSTPLAN?
+              </h2>
+              <p className="text-lg md:text-xl text-zinc-300 max-w-3xl mx-auto leading-relaxed">
+                Our platform makes business model planning simple, collaborative, and effective for teams of all sizes
+              </p>
+            </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {benefits.map((benefit, index) => (
-              <div key={index} className="text-center space-y-4">
-                <div className="flex justify-center">
-                  <div className="p-3 bg-zinc-800 rounded-full">
-                    {benefit.icon}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+              {benefits.map((benefit, index) => (
+                <div key={index} className="group text-center space-y-6 p-6 rounded-2xl bg-zinc-900/30 backdrop-blur-sm border border-zinc-800/50 hover:bg-zinc-800/50 hover:border-zinc-700 transition-all duration-300 transform hover:scale-105">
+                  <div className="flex justify-center">
+                    <div className="p-4 bg-gradient-to-br from-zinc-800 to-zinc-700 rounded-2xl group-hover:from-zinc-700 group-hover:to-zinc-600 transition-all duration-300 shadow-lg">
+                      {benefit.icon}
+                    </div>
                   </div>
+                  <h3 className="text-xl font-semibold text-white group-hover:text-zinc-100 transition-colors">{benefit.title}</h3>
+                  <p className="text-zinc-300 group-hover:text-zinc-200 transition-colors leading-relaxed">{benefit.description}</p>
                 </div>
-                <h3 className="text-xl font-semibold">{benefit.title}</h3>
-                <p className="text-zinc-300">{benefit.description}</p>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
 
-          <div className="bg-zinc-900 border border-zinc-800 rounded-lg p-8">
-            <div className="space-y-4">
-              <h3 className="text-2xl font-bold text-center">Key Features</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="flex items-center gap-3">
-                  <CheckCircle className="h-5 w-5 text-green-500" />
-                  <span className="text-zinc-200">Interactive canvas interface</span>
+            <div className="bg-gradient-to-br from-zinc-900 to-zinc-800 border border-zinc-700 rounded-2xl p-8 lg:p-12 shadow-2xl">
+              <div className="space-y-8">
+                <div className="text-center space-y-4">
+                  <div className="flex justify-center">
+                    <div className="p-3 bg-green-500/20 rounded-xl">
+                      <CheckCircle className="h-8 w-8 text-green-400" />
+                    </div>
+                  </div>
+                  <h3 className="text-2xl md:text-3xl font-bold text-white">Key Features</h3>
+                  <p className="text-zinc-300 max-w-2xl mx-auto">Everything you need to create, manage, and share your business model canvas</p>
                 </div>
-                <div className="flex items-center gap-3">
-                  <CheckCircle className="h-5 w-5 text-green-500" />
-                  <span className="text-zinc-200">Real-time editing and updates</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <CheckCircle className="h-5 w-5 text-green-500" />
-                  <span className="text-zinc-200">Professional templates</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <CheckCircle className="h-5 w-5 text-green-500" />
-                  <span className="text-zinc-200">Secure cloud storage</span>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                  <div className="flex flex-col items-center gap-3 p-4 bg-zinc-800/50 rounded-xl hover:bg-zinc-700/50 transition-colors">
+                    <CheckCircle className="h-6 w-6 text-green-400" />
+                    <span className="text-zinc-200 font-medium text-center">Interactive Canvas Interface</span>
+                  </div>
+                  <div className="flex flex-col items-center gap-3 p-4 bg-zinc-800/50 rounded-xl hover:bg-zinc-700/50 transition-colors">
+                    <CheckCircle className="h-6 w-6 text-green-400" />
+                    <span className="text-zinc-200 font-medium text-center">Real-time Editing & Updates</span>
+                  </div>
+                  <div className="flex flex-col items-center gap-3 p-4 bg-zinc-800/50 rounded-xl hover:bg-zinc-700/50 transition-colors">
+                    <CheckCircle className="h-6 w-6 text-green-400" />
+                    <span className="text-zinc-200 font-medium text-center">Professional Templates</span>
+                  </div>
+                  <div className="flex flex-col items-center gap-3 p-4 bg-zinc-800/50 rounded-xl hover:bg-zinc-700/50 transition-colors">
+                    <CheckCircle className="h-6 w-6 text-green-400" />
+                    <span className="text-zinc-200 font-medium text-center">Secure Cloud Storage</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -395,6 +411,7 @@ export default async function HomePage() {
     </div>
   )
 }
+
 
 
 

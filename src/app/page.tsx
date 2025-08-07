@@ -132,6 +132,7 @@ export default async function HomePage() {
                         Open Your Canvas
                       </Button>
                     </Link>
+{/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
                     <a href="/api/auth/logout">
                       <Button variant="outline" size="lg" className="w-full border-zinc-600 bg-zinc-800/50 text-white hover:bg-zinc-700 px-8 py-4 rounded-xl font-semibold transition-all duration-200">
                         Logout
@@ -496,6 +497,7 @@ export default async function HomePage() {
     </div>
   )
 }
+
 
 
 

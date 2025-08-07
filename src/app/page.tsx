@@ -167,35 +167,85 @@ export default async function HomePage() {
                 </div>
               </div>
             )}
+          </div>
         </div>
       </div>
 
-      <Separator className="bg-zinc-800" />
+      <Separator className="bg-gradient-to-r from-transparent via-zinc-700 to-transparent" />
 
       {/* What is Business Model Canvas Section */}
-      <div className="container mx-auto px-4 py-16">
-        <div className="max-w-4xl mx-auto space-y-8">
-          <div className="text-center space-y-4">
-            <h2 className="text-3xl md:text-4xl font-bold">What is a Business Model Canvas?</h2>
-            <p className="text-lg text-zinc-300">
-              A Business Model Canvas is a strategic management tool that provides a visual framework for developing, describing, and analyzing business models.
-            </p>
-          </div>
+      <div className="relative py-20 lg:py-32">
+        <div className="absolute inset-0 bg-gradient-to-b from-zinc-900/50 to-black"></div>
+        <div className="relative container mx-auto px-4">
+          <div className="max-w-6xl mx-auto space-y-12">
+            <div className="text-center space-y-6">
+              <Badge variant="outline" className="border-purple-500/50 bg-purple-500/10 text-purple-300 px-4 py-2 text-sm font-medium">
+                Strategic Framework
+              </Badge>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-white to-zinc-300 bg-clip-text text-transparent">
+                What is a Business Model Canvas?
+              </h2>
+              <p className="text-lg md:text-xl text-zinc-300 max-w-3xl mx-auto leading-relaxed">
+                A Business Model Canvas is a strategic management tool that provides a visual framework for developing, describing, and analyzing business models.
+              </p>
+            </div>
 
-          <Card className="bg-zinc-900 border-zinc-800">
-            <CardContent className="p-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+              <Card className="bg-gradient-to-br from-zinc-900 to-zinc-800 border-zinc-700 shadow-2xl">
+                <CardContent className="p-8 lg:p-10">
+                  <div className="space-y-6">
+                    <div className="flex items-center gap-3 mb-6">
+                      <div className="p-2 bg-blue-500/20 rounded-lg">
+                        <Lightbulb className="h-6 w-6 text-blue-400" />
+                      </div>
+                      <h3 className="text-xl font-semibold text-white">Strategic Innovation</h3>
+                    </div>
+                    <p className="text-zinc-200 text-lg leading-relaxed">
+                      Originally developed by Alexander Osterwalder, the Business Model Canvas breaks down your business into 9 essential building blocks, 
+                      helping you understand how your company creates, delivers, and captures value.
+                    </p>
+                    <p className="text-zinc-300 leading-relaxed">
+                      Whether you're launching a startup, pivoting an existing business, or exploring new opportunities, 
+                      the Business Model Canvas provides clarity and structure to your strategic thinking.
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+
               <div className="space-y-6">
-                <p className="text-zinc-200 text-lg leading-relaxed">
-                  Originally developed by Alexander Osterwalder, the Business Model Canvas breaks down your business into 9 essential building blocks, 
-                  helping you understand how your company creates, delivers, and captures value.
-                </p>
-                <p className="text-zinc-300">
-                  Whether you're launching a startup, pivoting an existing business, or exploring new opportunities, 
-                  the Business Model Canvas provides clarity and structure to your strategic thinking.
-                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="bg-zinc-900/50 backdrop-blur-sm border border-zinc-800 rounded-xl p-6 hover:bg-zinc-800/50 transition-all duration-200">
+                    <div className="flex items-center gap-3 mb-3">
+                      <Target className="h-5 w-5 text-green-400" />
+                      <h4 className="font-semibold text-white">Clear Vision</h4>
+                    </div>
+                    <p className="text-zinc-300 text-sm">Visualize your entire business model at a glance</p>
+                  </div>
+                  <div className="bg-zinc-900/50 backdrop-blur-sm border border-zinc-800 rounded-xl p-6 hover:bg-zinc-800/50 transition-all duration-200">
+                    <div className="flex items-center gap-3 mb-3">
+                      <BarChart3 className="h-5 w-5 text-blue-400" />
+                      <h4 className="font-semibold text-white">Data-Driven</h4>
+                    </div>
+                    <p className="text-zinc-300 text-sm">Make informed strategic decisions</p>
+                  </div>
+                  <div className="bg-zinc-900/50 backdrop-blur-sm border border-zinc-800 rounded-xl p-6 hover:bg-zinc-800/50 transition-all duration-200">
+                    <div className="flex items-center gap-3 mb-3">
+                      <Users className="h-5 w-5 text-purple-400" />
+                      <h4 className="font-semibold text-white">Collaborative</h4>
+                    </div>
+                    <p className="text-zinc-300 text-sm">Work together with your team seamlessly</p>
+                  </div>
+                  <div className="bg-zinc-900/50 backdrop-blur-sm border border-zinc-800 rounded-xl p-6 hover:bg-zinc-800/50 transition-all duration-200">
+                    <div className="flex items-center gap-3 mb-3">
+                      <TrendingUp className="h-5 w-5 text-orange-400" />
+                      <h4 className="font-semibold text-white">Growth-Focused</h4>
+                    </div>
+                    <p className="text-zinc-300 text-sm">Scale your business with confidence</p>
+                  </div>
+                </div>
               </div>
-            </CardContent>
-          </Card>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -323,5 +373,6 @@ export default async function HomePage() {
     </div>
   )
 }
+
 
 

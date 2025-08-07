@@ -371,46 +371,133 @@ export default async function HomePage() {
         </div>
       </div>
 
-      <Separator className="bg-zinc-800" />
+      <Separator className="bg-gradient-to-r from-transparent via-zinc-700 to-transparent" />
 
       {/* Call to Action */}
-      <div className="container mx-auto px-4 py-16">
-        <div className="max-w-2xl mx-auto text-center space-y-8">
-          <div className="space-y-4">
-            <h2 className="text-3xl md:text-4xl font-bold">Ready to Plan Your Success?</h2>
-            <p className="text-lg text-zinc-300">
-              Join thousands of entrepreneurs and business professionals who use JUSTPLAN to bring clarity to their business models.
-            </p>
-          </div>
-
-          {!user && (
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="/api/auth/login?screen_hint=signup">
-                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3">
-                  Start Building Your Canvas
-                </Button>
-              </a>
-              <a href="/api/auth/login">
-                <Button variant="outline" size="lg" className="border-zinc-600 bg-zinc-800 text-white hover:bg-zinc-700 px-8 py-3">
-                  Sign In
-                </Button>
-              </a>
+      <div className="relative py-20 lg:py-32">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-black to-purple-900/20"></div>
+        <div className="relative container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center space-y-12">
+            <div className="space-y-6">
+              <Badge variant="outline" className="border-blue-500/50 bg-blue-500/10 text-blue-300 px-4 py-2 text-sm font-medium">
+                Get Started Today
+              </Badge>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-white via-zinc-200 to-zinc-400 bg-clip-text text-transparent">
+                Ready to Plan Your Success?
+              </h2>
+              <p className="text-lg md:text-xl text-zinc-300 max-w-3xl mx-auto leading-relaxed">
+                Join thousands of entrepreneurs and business professionals who use JUSTPLAN to bring clarity to their business models and accelerate their growth.
+              </p>
             </div>
-          )}
+
+            {!user && (
+              <div className="space-y-8">
+                <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-lg mx-auto">
+                  <a href="/api/auth/login?screen_hint=signup" className="flex-1">
+                    <Button size="lg" className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-blue-500/25 transition-all duration-200 transform hover:scale-105">
+                      Start Building Your Canvas
+                    </Button>
+                  </a>
+                  <a href="/api/auth/login" className="flex-1">
+                    <Button variant="outline" size="lg" className="w-full border-zinc-600 bg-zinc-800/50 backdrop-blur-sm text-white hover:bg-zinc-700 px-8 py-4 rounded-xl font-semibold transition-all duration-200 transform hover:scale-105">
+                      Sign In
+                    </Button>
+                  </a>
+                </div>
+                
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl mx-auto">
+                  <div className="flex flex-col items-center gap-2 p-4 bg-zinc-900/30 backdrop-blur-sm border border-zinc-800/50 rounded-xl">
+                    <CheckCircle className="h-5 w-5 text-green-400" />
+                    <span className="text-zinc-300 text-sm font-medium">Free to start</span>
+                  </div>
+                  <div className="flex flex-col items-center gap-2 p-4 bg-zinc-900/30 backdrop-blur-sm border border-zinc-800/50 rounded-xl">
+                    <CheckCircle className="h-5 w-5 text-green-400" />
+                    <span className="text-zinc-300 text-sm font-medium">No credit card required</span>
+                  </div>
+                  <div className="flex flex-col items-center gap-2 p-4 bg-zinc-900/30 backdrop-blur-sm border border-zinc-800/50 rounded-xl">
+                    <CheckCircle className="h-5 w-5 text-green-400" />
+                    <span className="text-zinc-300 text-sm font-medium">Start in seconds</span>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
         </div>
       </div>
 
       {/* Footer */}
-      <div className="border-t border-zinc-800">
-        <div className="container mx-auto px-4 py-8">
-          <div className="text-center text-zinc-400">
-            <p>&copy; 2024 JUSTPLAN. Professional Business Model Canvas tool powered by EVERJUST.</p>
+      <div className="relative border-t border-zinc-800/50">
+        <div className="absolute inset-0 bg-gradient-to-b from-zinc-950 to-black"></div>
+        <div className="relative container mx-auto px-4 py-12">
+          <div className="max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+              <div className="space-y-4">
+                <h3 className="text-xl font-bold text-white">JUSTPLAN</h3>
+                <p className="text-zinc-400 text-sm leading-relaxed">
+                  Professional Business Model Canvas tool that helps entrepreneurs and businesses visualize, plan, and execute their strategies with confidence.
+                </p>
+              </div>
+              <div className="space-y-4">
+                <h4 className="text-lg font-semibold text-white">Features</h4>
+                <ul className="space-y-2 text-zinc-400 text-sm">
+                  <li className="flex items-center gap-2">
+                    <div className="w-1 h-1 bg-blue-400 rounded-full"></div>
+                    Interactive Canvas
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <div className="w-1 h-1 bg-blue-400 rounded-full"></div>
+                    Real-time Collaboration
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <div className="w-1 h-1 bg-blue-400 rounded-full"></div>
+                    Professional Templates
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <div className="w-1 h-1 bg-blue-400 rounded-full"></div>
+                    Secure Cloud Storage
+                  </li>
+                </ul>
+              </div>
+              <div className="space-y-4">
+                <h4 className="text-lg font-semibold text-white">Business Model Canvas</h4>
+                <ul className="space-y-2 text-zinc-400 text-sm">
+                  <li className="flex items-center gap-2">
+                    <div className="w-1 h-1 bg-green-400 rounded-full"></div>
+                    9 Essential Building Blocks
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <div className="w-1 h-1 bg-green-400 rounded-full"></div>
+                    Strategic Framework
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <div className="w-1 h-1 bg-green-400 rounded-full"></div>
+                    Visual Planning Tool
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <div className="w-1 h-1 bg-green-400 rounded-full"></div>
+                    Proven Methodology
+                  </li>
+                </ul>
+              </div>
+            </div>
+            
+            <Separator className="bg-zinc-800/50 mb-8" />
+            
+            <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+              <div className="text-zinc-400 text-sm">
+                &copy; 2024 JUSTPLAN. Professional Business Model Canvas tool powered by EVERJUST.
+              </div>
+              <div className="flex items-center gap-4 text-zinc-500 text-sm">
+                <span>Built with Next.js & Tailwind CSS</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   )
 }
+
 
 
 

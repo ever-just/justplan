@@ -8,7 +8,6 @@ import {
   Users, 
   Heart, 
   Package, 
-  Megaphone, 
   ArrowRightLeft, 
   DollarSign, 
   Wrench, 
@@ -497,6 +496,7 @@ export default async function HomePage() {
     </div>
   )
 }
+
 
 
 

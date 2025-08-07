@@ -102,19 +102,26 @@ export default async function HomePage() {
   return (
     <div className="min-h-screen bg-black text-white">
       {/* Hero Section */}
-      <div className="container mx-auto px-4 py-16">
-        <div className="text-center space-y-8 max-w-4xl mx-auto">
-          <div className="space-y-4">
-            <h1 className="text-5xl md:text-6xl font-bold tracking-tight">
-              JUSTPLAN
-            </h1>
-            <p className="text-xl md:text-2xl text-zinc-400">
-              Professional Business Model Canvas Tool
-            </p>
-            <p className="text-lg text-zinc-300 max-w-2xl mx-auto">
-              Transform your business ideas into structured, actionable plans with our intuitive Business Model Canvas platform.
-            </p>
-          </div>
+      <div className="relative overflow-hidden">
+        {/* Background gradient effect */}
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-black to-purple-900/20"></div>
+        <div className="relative container mx-auto px-4 py-20 lg:py-32">
+          <div className="text-center space-y-8 max-w-5xl mx-auto">
+            <div className="space-y-6">
+              <Badge variant="outline" className="border-blue-500/50 bg-blue-500/10 text-blue-300 px-4 py-2 text-sm font-medium">
+                Professional Business Planning Tool
+              </Badge>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight bg-gradient-to-r from-white via-zinc-200 to-zinc-400 bg-clip-text text-transparent">
+                JUSTPLAN
+              </h1>
+              <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-zinc-400 font-medium">
+                Professional Business Model Canvas Tool
+              </p>
+              <p className="text-base sm:text-lg md:text-xl text-zinc-300 max-w-3xl mx-auto leading-relaxed">
+                Transform your business ideas into structured, actionable plans with our intuitive Business Model Canvas platform. 
+                Visualize, plan, and execute your business strategy with confidence.
+              </p>
+            </div>
 
           {user ? (
             <div className="space-y-6">
@@ -304,3 +311,4 @@ export default async function HomePage() {
     </div>
   )
 }
+
